@@ -41,8 +41,8 @@ void Actor::checkMinToZero(int axis)
 
 void Actor::stop(int axis)
 {
-    m_speed[axis] = 0;
-    m_acc[axis] = 0;
+    m_speed[axis] = 0.0f;
+    m_acc[axis] = 0.0f;
 }
 
 void Actor::stop()

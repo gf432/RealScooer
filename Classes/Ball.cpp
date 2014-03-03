@@ -20,6 +20,7 @@ Ball::Ball()
 ,m_rect(CCRectZero)
 ,m_touchRect(CCRectZero)
 ,m_lastCollisionFlag(kBallCollisionNone)
+,m_debugMovePoint(CCPointZero)
 {
     Actor::Actor();
     //sprite frame cache
@@ -135,8 +136,10 @@ void Ball::update(float dt)
     }
     else if(m_state == kBallStateMoveOnGround)
     {
-        m_acc[X] = - cosf(m_angle) * RESISTANCE_GROUND * dt;
-        m_acc[Y] = - sinf(m_angle) * RESISTANCE_GROUND * dt;
+        if(m_speed[X] != 0.0f)
+            m_acc[X] = - cosf(m_angle) * RESISTANCE_GROUND * dt;
+        if(m_speed[Y] != 0.0f)
+            m_acc[Y] = - sinf(m_angle) * RESISTANCE_GROUND * dt;
     }
     
     updatePosition();
@@ -181,6 +184,11 @@ void Ball::draw()
     ccDrawColor4B(0, 255, 255, 255);
     ccDrawLine(ccp(-100.0f, 0.0f), ccp(100.0f, 0.0f));
     ccDrawLine(ccp(0.0f, -100.0f), ccp(0.0f, 100.0f));
+    
+    ccDrawColor4B(255, 255, 0, 255);
+    CCPoint drawPoint = ccpSub(m_debugMovePoint, VisibleRect::center());
+    ccDrawLine(ccp(drawPoint.x -100.0f, drawPoint.y), ccp(drawPoint.x + 100.0f, drawPoint.y));
+    ccDrawLine(ccp(drawPoint.x, drawPoint.y -100.0f), ccp(drawPoint.x, drawPoint.y + 100.0f));
     
     if(m_state == kBallStateAim)
     {

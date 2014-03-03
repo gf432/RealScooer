@@ -33,7 +33,7 @@ typedef enum tagAxis
 //ball bounce ratio on axis Z
 #define BALL_BOUNCE_RATIO_ONGROUND 0.6f
 //ball bounce ratio on axis Z
-#define BALL_BOUNCE_RATIO_WITH_GOAL 0.8f
+#define BALL_BOUNCE_RATIO_WITH_GOAL 0.6f
 //minimum of speed effect value, less than this value then set zero.
 #define MIN_SPEED_EFFECT_ZERO 1.0f
 
@@ -55,8 +55,9 @@ typedef enum tagAxis
 //bottom 916
 #define GOAL_LEFT 238.0f
 #define GOAL_RIGHT 404.0f
-#define GOAL_TOP 970.0f
-#define GOAL_BOTTOM 920.0f
+#define GOAL_TOP 972.0f
+#define GOAL_BOTTOM 918.0f
+#define GOAL_NET_BOTTOM 944.0f
 #define GOAL_POST_RADIUS 5.0f
 
 #endif

@@ -88,6 +88,10 @@ bool ShootPractice::ccTouchBegan(CCTouch* touch, CCEvent* event)
 
 void ShootPractice::ccTouchMoved(CCTouch* touch, CCEvent* event)
 {
+    if(m_ball)
+    {
+        m_ball->m_debugMovePoint = touch->getLocation();
+    }
     m_debugLabel->setString(CCString::createWithFormat(" x:%.2f \n y:%.2f", touch->getLocation().x, touch->getLocation().y)->getCString());
 }
 

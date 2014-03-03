@@ -18,6 +18,8 @@ typedef enum tagBallCollisionFlag
     kBallCollisionLeftPost,
     kBallCollisionRightPost,
     kBallCollisionCrossbar,
+    kBallCollisionSideNet,
+    kBallCollisionBackNet,
     kBallCollisionGK
 }BallCollisionFlag;
 
@@ -66,6 +68,8 @@ public:
     virtual void update(float dt);
     
     static Ball* create();
+    
+    CCPoint m_debugMovePoint;
 private:
     CCAnimation* m_ballAnimRoll;
     CCSprite* m_ballSpr;

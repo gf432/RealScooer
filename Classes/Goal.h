@@ -25,6 +25,8 @@ public:
     bool checkBall(Ball* ball);
     bool checkBallWithPost(Ball* ball, bool isLeftPost);
     bool checkBallWithCrossbar(Ball* ball);
+    bool checkBallWithSideNet(Ball* ball, bool isLeft);
+    bool checkBallWithBackNet(Ball* ball);
     
     virtual void draw();
     
@@ -35,6 +37,7 @@ private:
     float m_goalRight;
     float m_goalWidth;
     float m_goalHeight;
+    float m_goalDepth;
     float m_postRadius;
 };
 
