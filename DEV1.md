@@ -5,3 +5,5 @@ I'm have been deleted on master!
 add sth on master!
 add sth on master again!
 end!
+
+add sth for amend on master!
